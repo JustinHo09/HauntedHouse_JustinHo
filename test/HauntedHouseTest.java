@@ -81,4 +81,31 @@ class HauntedHouseTest {
     void spookySound() {
         assertEquals("Boo!", house.spookySound());
     }
+
+    @Test
+    void runningLow(){
+        house.trickOrTreat(10);
+        house.runningLow();
+        assertEquals(10, house.getCandyCount());
+    }
+
+    @Test
+    void runningLowNotEmpty(){
+        house.trickOrTreat(5);
+        house.runningLow();
+        assertEquals(5, house.getCandyCount());
+    }
+
+    @Test
+    void haunting(){
+        house.scareAwayGhost();
+        house.haunting();
+        assertTrue(house.isGhostPresent());
+    }
+
+    @Test
+    void hauntingGhostPresent(){
+        house.haunting();
+        assertTrue(house.isGhostPresent());
+    }
 }

@@ -35,6 +35,18 @@ public class HauntedHouse {
         return "Boo!";
     }
 
+    public void runningLow(){
+        if(candyCount == 0) {
+            candyCount = 10;
+        }
+    }
+
+    public void haunting(){
+        if(!ghostPresent) {
+            ghostPresent = true;
+        }
+    }
+
     @Override
     public String toString() {
         String result = "The house ";
