@@ -25,6 +25,9 @@ public class HauntedHouse {
         if(people >= 0 && candyCount >= people) {
             candyCount -= people;
         }
+        if(candyCount <= 0) {
+            refillCandyBowl(10);
+        }
     }
 
     public int getCandyCount() {
@@ -33,12 +36,6 @@ public class HauntedHouse {
 
     public String spookySound() {
         return "Boo!";
-    }
-
-    public void runningLow(){
-        if(candyCount == 0) {
-            candyCount = 10;
-        }
     }
 
     public void haunting(){
